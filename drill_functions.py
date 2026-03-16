@@ -10,29 +10,23 @@ import pandas as pd
 
 
 def clean_column(series):
-    """Fill NaN values with the series median. Returns the cleaned Series.
-
-    Args:
-        series (pd.Series): A pandas Series that may contain NaN values.
-
-    Returns:
-        pd.Series: The Series with NaN values replaced by the median.
-    """
+    """Fill NaN values with the series median. Returns the cleaned Series."""
+    
+    median_value = series.median()
+    cleaned_series = series.fillna(median_value)
+    
+    return cleaned_series
     # TODO: Fill NaN values with series.median()
     # TODO: Return the cleaned Series
     pass
 
 
 def compute_revenue(quantity, price):
-    """Multiply quantity and price element-wise. Returns a revenue Series.
-
-    Args:
-        quantity (pd.Series): A Series of unit quantities.
-        price (pd.Series): A Series of unit prices.
-
-    Returns:
-        pd.Series: Element-wise product of quantity and price.
-    """
+    """Multiply quantity and price element-wise. Returns a revenue Series."""
+    
+    revenue = quantity * price
+    
+    return revenue
     # TODO: Multiply quantity and price element-wise
     # TODO: Return the result
     pass
